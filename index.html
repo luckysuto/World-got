@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  >
+
+  <title>未定</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>
+        未定
+        <small>Pixel Tactics</small>
+      </h1>
+
+      <div id="stats"></div>
+    </header>
+
+    <!-- 対戦設定画面 -->
+    <section id="setup">
+      <h2>対戦設定</h2>
+
+      <label>
+        マップ
+        <select id="mapChoice">
+          <option value="plains">平原 12×12</option>
+          <option value="mountain">山岳 12×12</option>
+          <option value="river">河川 14×12</option>
+          <option value="islands">群島 14×14</option>
+        </select>
+      </label>
+
+      <label>
+        AI
+        <select id="difficulty">
+          <option value="easy">初級</option>
+          <option value="normal" selected>中級</option>
+          <option value="hard">上級</option>
+        </select>
+      </label>
+
+      <label>
+        先攻
+        <select id="first">
+          <option value="player">プレイヤー</option>
+          <option value="ai">AI</option>
+        </select>
+      </label>
+
+      <button id="start">対戦開始</button>
+
+      <button id="load">
+        保存データを再開
+      </button>
+    </section>
+
+    <!-- ゲーム画面 -->
+    <section id="play" hidden>
+
+      <div id="toolbar">
+        <button id="end">ターン終了</button>
+        <button id="save">保存</button>
+        <button id="new">新しい対戦</button>
+
+        <span id="notice"></span>
+      </div>
+
+      <div id="viewport">
+        <canvas id="board"></canvas>
+      </div>
+
+      <div id="panel">
+        <div id="selection">
+          ユニットか都市をタップ
+        </div>
+
+        <div id="actions"></div>
+      </div>
+
+      <p class="hint">
+        ユニットを選択 → 移動先か敵をタップ。
+        移動経路は自動選択。
+        都市をタップして生産できます。
+      </p>
+
+    </section>
+
+    <!-- 対戦結果画面 -->
+    <section id="result" hidden>
+      <h2 id="outcome"></h2>
+
+      <p id="summary"></p>
+
+      <button id="again">
+        もう一度
+      </button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
